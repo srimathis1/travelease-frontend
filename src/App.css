@@ -1,0 +1,321 @@
+/* =========================
+   GOOGLE FONT STYLE
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#eef2ff;
+  overflow-x:hidden;
+}
+
+/* smooth animation */
+
+button,
+input,
+.route-card,
+.stat-card,
+.sidebar-btn{
+  transition:all .35s ease;
+}
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-container{
+  min-height:100vh;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:80px;
+  background:
+          linear-gradient(
+                  135deg,
+                  #071952 0%,
+                  #0b3d91 50%,
+                  #1e5eff 100%
+          );
+  position:relative;
+  overflow:hidden;
+}
+
+/* glow circles */
+
+.login-container::before{
+  content:"";
+  position:absolute;
+  width:450px;
+  height:450px;
+  background:
+          rgba(255,255,255,0.08);
+  border-radius:50%;
+  top:-150px;
+  right:-100px;
+  animation:floatOne 8s ease-in-out infinite;
+}
+
+.login-container::after{
+  content:"";
+  position:absolute;
+  width:320px;
+  height:320px;
+  background:
+          rgba(255,255,255,0.08);
+  border-radius:50%;
+  bottom:-100px;
+  left:-80px;
+  animation:floatTwo 7s ease-in-out infinite;
+}
+
+@keyframes floatOne{
+  0%{
+    transform:
+            translateY(0px);
+  }
+
+  50%{
+    transform:
+            translateY(30px);
+  }
+
+  100%{
+    transform:
+            translateY(0px);
+  }
+}
+
+@keyframes floatTwo{
+  0%{
+    transform:
+            translateY(0px);
+  }
+
+  50%{
+    transform:
+            translateY(-30px);
+  }
+
+  100%{
+    transform:
+            translateY(0px);
+  }
+}
+
+/* =========================
+   USER DASHBOARD
+========================= */
+
+.user-layout{
+  display:flex;
+  min-height:100vh;
+  background:#f5f7ff;
+}
+
+.user-main{
+  flex:1;
+  padding:35px;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.user-sidebar{
+  width:270px;
+  background:
+          linear-gradient(
+                  180deg,
+                  #071952,
+                  #0b3d91
+          );
+
+  color:white;
+  padding:28px 20px;
+
+  box-shadow:
+          4px 0 20px rgba(
+                  0,0,0,0.15
+          );
+
+  transition:
+          0.4s ease;
+}
+
+.sidebar-btn{
+  width:100%;
+  border:none;
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:16px;
+  color:white;
+  background:
+          rgba(255,255,255,0.08);
+
+  cursor:pointer;
+  font-size:16px;
+  font-weight:500;
+}
+
+.sidebar-btn:hover{
+
+  background:
+          linear-gradient(
+                  135deg,
+                  #1f65ff,
+                  #4f85ff
+          );
+
+  transform:
+          translateX(8px);
+}
+
+.logout-btn{
+  background:
+          linear-gradient(
+                  135deg,
+                  #ff416c,
+                  #ff4b2b
+          ) !important;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box input{
+  width:100%;
+  padding:18px;
+  border:none;
+  border-radius:18px;
+  background:white;
+  box-shadow:
+          0 8px 20px rgba(
+                  0,0,0,0.06
+          );
+
+  font-size:16px;
+}
+
+.search-box input:focus{
+  outline:none;
+
+  transform:
+          scale(1.01);
+}
+
+/* =========================
+   ROUTE CARDS
+========================= */
+
+.route-grid{
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,
+  minmax(330px,1fr));
+
+  gap:25px;
+}
+
+.route-card{
+  background:white;
+  border-radius:28px;
+  padding:28px;
+
+  box-shadow:
+          0 8px 24px rgba(
+                  0,0,0,0.08
+          );
+
+  border:
+          1px solid #edf2ff;
+}
+
+.route-card:hover{
+
+  transform:
+          translateY(-10px);
+
+  box-shadow:
+          0 18px 30px rgba(
+                  30,94,255,0.16
+          );
+}
+
+.route-card h3{
+  color:#0b3d91;
+  margin-bottom:14px;
+}
+
+.book-btn{
+  width:100%;
+  border:none;
+  border-radius:14px;
+  padding:16px;
+  margin-top:16px;
+
+  background:
+          linear-gradient(
+                  135deg,
+                  #0b3d91,
+                  #1e5eff
+          );
+
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.book-btn:hover{
+
+  transform:
+          translateY(-4px);
+
+  box-shadow:
+          0 10px 25px rgba(
+                  30,94,255,0.3
+          );
+}
+
+/* =========================
+   ADMIN DASHBOARD
+========================= */
+
+.stat-card{
+  background:white;
+  border-radius:24px;
+  padding:30px;
+  text-align:center;
+
+  box-shadow:
+          0 8px 22px rgba(
+                  0,0,0,0.08
+          );
+}
+
+.stat-card:hover{
+
+  transform:
+          translateY(-8px);
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+  width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#1e5eff;
+  border-radius:20px;
+}
