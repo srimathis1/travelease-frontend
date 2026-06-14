@@ -12,10 +12,12 @@ function Login({ setUser }) {
         useState(false);
 
     const [form, setForm] = useState({
-        username: "",
-        email: "",
-        password: ""
-    });
+    username: "",
+    email: "",
+    password: "",
+    phone: "",
+    address: ""
+});
 
     const handleChange = (e) => {
         setForm({
@@ -442,25 +444,41 @@ function Login({ setUser }) {
                         />
 
                         <Input
-                            name="username"
-                            placeholder="Username"
-                            onChange={handleChange}
-                        />
+    name="username"
+    placeholder="Username"
+    onChange={handleChange}
+/>
 
-                        {isRegister && (
-                            <Input
-                                name="email"
-                                placeholder="Email"
-                                onChange={handleChange}
-                            />
-                        )}
+{isRegister && (
+    <Input
+        name="email"
+        placeholder="Email"
+        onChange={handleChange}
+    />
+)}
 
-                        <Input
-                            type="password"
-                            name="password"
-                            placeholder="Password"
-                            onChange={handleChange}
-                        />
+{isRegister && (
+    <Input
+        name="phone"
+        placeholder="Phone Number"
+        onChange={handleChange}
+    />
+)}
+
+{isRegister && (
+    <Input
+        name="address"
+        placeholder="Address"
+        onChange={handleChange}
+    />
+)}
+
+<Input
+    type="password"
+    name="password"
+    placeholder="Password"
+    onChange={handleChange}
+/>
 
                         <Button
                             text={
