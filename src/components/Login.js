@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API_BASE_URL from "../config";
@@ -221,7 +222,13 @@ function Login({ setUser }) {
                         "rgba(255,255,255,0.07)",
 
                     animation:
-                        "float 7s ease-in-out infinite"
+                        "float 7s ease-in-out infinite",
+
+                    pointerEvents:
+                        "none",
+
+                    zIndex:
+                        0
                 }}
             />
 
@@ -249,7 +256,13 @@ function Login({ setUser }) {
                         "rgba(255,255,255,0.05)",
 
                     animation:
-                        "float 8s ease-in-out infinite"
+                        "float 8s ease-in-out infinite",
+
+                    pointerEvents:
+                        "none",
+
+                    zIndex:
+                        0
                 }}
             />
 
@@ -332,71 +345,6 @@ function Login({ setUser }) {
                     booking experiences.
                 </p>
 
-                <Feature
-                    text="Smart Route Booking"
-                />
-
-                <Feature
-                    text="Travel Analytics"
-                />
-
-                <Feature
-                    text="Trip & Vehicle Management"
-                />
-
-                <Feature
-                    text="Customer Reviews & Ratings"
-                />
-
-                <div
-                    style={{
-                        marginTop:
-                            "50px",
-
-                        padding:
-                            "28px",
-
-                        background:
-                            "rgba(255,255,255,0.08)",
-
-                        backdropFilter:
-                            "blur(12px)",
-
-                        borderRadius:
-                            "24px",
-
-                        maxWidth:
-                            "580px",
-
-                        border:
-                            "1px solid rgba(255,255,255,0.1)"
-                    }}
-                >
-                    <p
-                        style={{
-                            margin:
-                                0,
-
-                            fontSize:
-                                "28px",
-
-                            fontStyle:
-                                "italic",
-
-                            lineHeight:
-                                "1.7",
-
-                            color:
-                                "#E0F2FE"
-                        }}
-                    >
-                        "Journey beyond
-                        destinations —
-                        create memorable
-                        experiences
-                        with every trip."
-                    </p>
-                </div>
             </div>
 
             {/* LOGIN CARD */}
@@ -428,7 +376,10 @@ function Login({ setUser }) {
                         "0 20px 50px rgba(0,0,0,0.25)",
 
                     zIndex:
-                        2
+                        999,
+
+                    position:
+                        "relative"
                 }}
             >
 
@@ -580,24 +531,30 @@ function Login({ setUser }) {
     );
 }
 
-function Feature({ text }) {
+function Input(props) {
     return (
-        <div style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "14px",
-            marginBottom: "22px",
-            color: "white",
-            fontSize: "22px"
-        }}>
-            <div style={{
-                width: "12px",
-                height: "12px",
-                borderRadius: "50%",
-                background: "#93C5FD"
-            }} />
-            {text}
-        </div>
+        <input
+            {...props}
+            style={{
+                width: "100%",
+                padding: "18px",
+                marginBottom: "18px",
+                borderRadius: "18px",
+                border:
+                    "1px solid rgba(255,255,255,0.15)",
+                background:
+                    "rgba(255,255,255,0.12)",
+                color: "white",
+                fontWeight: "600",
+                fontSize: "16px",
+                outline: "none",
+
+                cursor: "text",
+                pointerEvents: "auto",
+                position: "relative",
+                zIndex: 9999
+            }}
+        />
     );
 }
 
@@ -621,28 +578,6 @@ function Button({ text, onClick }) {
         >
             {text}
         </button>
-    );
-}
-
-function Input(props) {
-    return (
-        <input
-            {...props}
-            style={{
-                width: "100%",
-                padding: "18px",
-                marginBottom: "18px",
-                borderRadius: "18px",
-                border:
-                    "1px solid rgba(255,255,255,0.15)",
-                background:
-                    "rgba(255,255,255,0.12)",
-                color: "white",
-                fontWeight: "600",
-                fontSize: "16px",
-                outline: "none"
-            }}
-        />
     );
 }
 
@@ -686,3 +621,4 @@ function Back({ onClick }) {
 }
 
 export default Login;
+
