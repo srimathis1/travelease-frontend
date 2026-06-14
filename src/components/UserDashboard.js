@@ -1,3 +1,4 @@
+import API_BASE_URL from "../config";
 import React, {
     useEffect,
     useState
@@ -50,8 +51,7 @@ function UserDashboard() {
 
                 const response =
                     await fetch(
-
-                        "http://localhost:8080/vehicles"
+                        `${API_BASE_URL}/vehicles`
                     );
 
                 const data =
@@ -175,7 +175,7 @@ function UserDashboard() {
                 const response =
                     await fetch(
 
-                        `http://localhost:8080/bookings/book?vehicleId=${vehicleId}&userId=${storedUser.id}&returnDate=${details.returnDate}&familyMembers=${details.familyMembers || 1}`,
+                        `${API_BASE_URL}/bookings/book?vehicleId=${vehicleId}&userId=${storedUser.id}&returnDate=${details.returnDate}&familyMembers=${details.familyMembers || 1}`,
 
                         {
                             method:

@@ -1,3 +1,4 @@
+import API_BASE_URL from "../config";
 import React, {
     useEffect,
     useState
@@ -49,7 +50,7 @@ function UserBookings() {
                 const res =
                     await fetch(
 
-                        `http://localhost:8080/bookings/user/${user.id}`
+                        `${API_BASE_URL}/bookings/user/${user.id}`
 
                     );
 
@@ -86,7 +87,7 @@ function UserBookings() {
                 const res =
                     await fetch(
 
-                        "http://localhost:8080/feedback/all"
+                        `${API_BASE_URL}/feedback/all`
                     );
 
                 const data =
@@ -268,7 +269,7 @@ function UserBookings() {
 
                 await fetch(
 
-                    "http://localhost:8080/feedback/add",
+                    `${API_BASE_URL}/feedback/add`,
 
                     {
 

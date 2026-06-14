@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import API_BASE_URL from "../config";
 
 function Login({ setUser }) {
 
@@ -65,7 +66,7 @@ function Login({ setUser }) {
 
                 const res =
                     await fetch(
-                        "http://localhost:8080/auth/login",
+                        `${API_BASE_URL}/auth/login`,
                         {
                             method: "POST",
 
@@ -125,7 +126,7 @@ function Login({ setUser }) {
 
                 const res =
                     await fetch(
-                        "http://localhost:8080/auth/register",
+                        `${API_BASE_URL}/auth/register`,
                         {
                             method:
                                 "POST",

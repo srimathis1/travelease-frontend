@@ -1,3 +1,4 @@
+import API_BASE_URL from "../config";
 import React,
 {
     useEffect,
@@ -18,7 +19,7 @@ function AdminBookings() {
     useEffect(() => {
 
         fetch(
-            "http://localhost:8080/bookings"
+            `${API_BASE_URL}/bookings`
         )
 
             .then((res) =>

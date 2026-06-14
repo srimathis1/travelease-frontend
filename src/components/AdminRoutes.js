@@ -1,3 +1,4 @@
+import API_BASE_URL from "../config";
 import React, {
     useEffect,
     useState
@@ -30,7 +31,7 @@ function AdminRoutes() {
     const fetchVehicles = () => {
 
         fetch(
-            "http://localhost:8080/vehicles"
+            `${API_BASE_URL}/vehicles`
         )
             .then((res) =>
                 res.json()
@@ -79,7 +80,7 @@ function AdminRoutes() {
         try {
 
             const res = await fetch(
-                "http://localhost:8080/vehicles",
+                `${API_BASE_URL}/vehicles`,
                 {
                     method: "POST",
 
@@ -135,7 +136,7 @@ function AdminRoutes() {
 
             await fetch(
 
-                `http://localhost:8080/vehicles/${id}`,
+                `${API_BASE_URL}/vehicles/${id}`,
 
                 {
                     method: "DELETE"

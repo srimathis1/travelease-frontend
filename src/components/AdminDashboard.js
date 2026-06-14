@@ -1,3 +1,4 @@
+import API_BASE_URL from "../config";
 import React, {
     useEffect,
     useState
@@ -30,7 +31,7 @@ function AdminDashboard() {
     useEffect(() => {
 
         fetch(
-            "http://localhost:8080/dashboard/stats"
+            `${API_BASE_URL}/dashboard/stats`
         )
             .then((res) => res.json())
 
